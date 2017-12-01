@@ -11,10 +11,16 @@ const apiKey = process.env.SHOPIFY_API_KEY;
 const apiSecret = process.env.SHOPIFY_API_SECRET;
 const scopes = 'read_products';
 const forwardingAddress = "https://3c6c11d3.ngrok.io";
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   res.send('rad-ish app');
 });
+
+app.get('/install', (req, res) =>res.render('install'));
+
+app.get('/itsok', (req, res) =>res.render('app'));
+
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rad-Ish App</title>
+  </head>
+  <body>
+    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+    <p> everything is fine </p>
+    <script>
+      window.apiKey = "939403d8ebbfee01786df6e52a5f89a1"
+      window.shopOrigin = "https://api-test-store-vix.myshopify.com"
+
+      const shopifyAppConfig = {
+        apiKey: window.apiKey,
+        shopOrigin: window.shopOrigin,
+      }
+
+      if ("<%= process.env.NODE_ENV %>" === 'development') {
+        shopifyAppConfig.forceRedirect = false;
+      }
+
+      ShopifyApp.init(shopifyAppConfig);
+    </script>
+
+    <div id="root"></div>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
